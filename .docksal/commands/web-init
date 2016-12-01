@@ -14,6 +14,14 @@ green_bg='\033[42m'
 yellow='\033[1;33m'
 NC='\033[0m'
 
+_name_project ()
+{
+	while true; do
+		read -p "$1: " projectName
+		break
+	done
+}
+
 # Yes/no confirmation dialog with an optional message
 # @param $1 confirmation message
 _confirm ()
@@ -35,10 +43,20 @@ _confirm ()
 
 echo -e "${green}Docksal powered Drupal 7 project setup${NC}"
 echo "------------------------------------------------"
-echo -e "Preparing to download Drupal 7 project to ${yellow}$(pwd)/docksal-drupal7${NC}"
+_name_project "Please enter the name of your project"
+echo -e "Preparing to download Drupal 7 project to ${yellow}$(pwd)/${projectName}${NC}"
 _confirm "Continue with this folder?"
 echo -e "${green_bg} INIT ${NC}${green} Cloning repository...${NC}"
 
-git clone -b master https://github.com/docksal/drupal7.git && \
-	cd docksal-drupal7 && \
-	fin init
+git clone -b master https://github.com/docksal/drupal7.git ${projectName}
+cd ${projectName}/.docksal
+
+# We have to do this sed command twice, to account for lines with more than
+# one occurence of "drupal7.docksal"
+sed -i.bak "s/drupal7/${projectName}/" docksal.env
+rm docksal.env.bak > /dev/null 2>&1
+sed -i.bak "s/drupal7/${projectName}/" docksal.env
+rm docksal.env.bak > /dev/null 2>&1
+cd ..
+
+fin init
