@@ -43,7 +43,7 @@ _confirm ()
 
 echo -e "${green}Docksal powered Drupal 7 project setup${NC}"
 echo "------------------------------------------------"
-_name_project "Please enter the name of your project"
+_name_project "Please enter the name of your project (all one word, no spaces)"
 echo -e "Preparing to download Drupal 7 project to ${yellow}$(pwd)/${projectName}${NC}"
 _confirm "Continue with this folder?"
 echo -e "${green_bg} INIT ${NC}${green} Cloning repository...${NC}"
