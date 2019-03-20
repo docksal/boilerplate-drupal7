@@ -20,7 +20,7 @@ Follow [Docksal environment setup instructions](http://docksal.readthedocs.io/en
 1. Clone this repo into your Projects directory
 
     ```
-    git clone https://github.com/docksal/boilerplate-drupal7.git
+    git clone https://github.com/docksal/boilerplate-drupal7.git drupal7
     cd drupal7
     ```
 
