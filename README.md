@@ -9,19 +9,18 @@ Features:
 
 ## Setup instructions
 
-### Step 1: Docksal environment setup
+### Step 1: Install Docksal
 
 **This is a one time setup - skip this if you already have a working Docksal environment.**  
 
-Follow [Docksal environment setup instructions](http://docksal.readthedocs.io/en/master/getting-started/env-setup)
+Follow [Docksal installation instructions](https://docs.docksal.io/getting-started/setup/)
    
 ### Step 2: Project setup
 
 1. Clone this repo into your Projects directory
 
     ```
-    git clone https://github.com/docksal/boilerplate-drupal7.git drupal7
-    cd drupal7
+    git clone https://github.com/docksal/boilerplate-drupal7.git drupal7 && cd drupal7
     ```
 
 2. Initialize the site
@@ -32,12 +31,10 @@ Follow [Docksal environment setup instructions](http://docksal.readthedocs.io/en
     fin init
     ```
 
-3. **On Windows** add `192.168.64.100  drupal7.docksal` to your hosts file
-
-4. Point your browser to
+3. Point your browser to
 
     ```
-    http://drupal7.docksal
+    http://drupal7.docksal.site
     ```
 
 

@@ -1,0 +1,21 @@
+name: Default
+
+on:
+  push: # Run on any push to the repo
+  workflow_dispatch: # Allow manually triggering the workflow
+
+env:
+  DOCKSAL_SSH_AGENT_USE_HOST: 0
+  DOCKSAL_DNS_DISABLED: 1
+
+jobs:
+  install:
+    name: Verify boilerplate installs
+    runs-on: ubuntu-20.04
+    steps:
+      - uses: actions/checkout@v3
+      - run: curl -fsSL https://get.docksal.io | bash
+      - run: fin sysinfo
+      - run: fin config
+      - run: fin init
+      - run: fin test

@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
 
+# This script runs inside cli. See https://docs.docksal.io/fin/custom-commands/#target_cli
+#: exec_target = cli
+
 ## Test site installation
 ##
 ## Usage: fin test
